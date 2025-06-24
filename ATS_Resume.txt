@@ -1,0 +1,63 @@
+ANSHUL PATIL
+Tolka Point Campus, Dublin, D01 W2R1, Ireland
++353 892128452
+anshulpatil619@gmail.com
+https://www.linkedin.com/in/anshul-patil-529440295/
+https://github.com/Exzelius
+PROFILE
+Computer Engineering graduate from Trinity College Dublin with a strong foundation in AI, full-stack development, and data-driven
+problem solving. Passionate in designing innovative intelligent systems and deploying end-to-end solutions using modern frameworks.
+Published AI researcher committed to delivering scalable, real-world software solutions in cross-functional teams.
+SKILLS
+Programming: Python, JavaScript, C++, SQL
+AI & Data Science: TensorFlow, PyTorch, Keras, scikit-learn, NumPy, Pandas, OpenCV, Matplotlib
+Web Development & APIs: React.js, Flask, Node.js, HTML5, CSS, REST API design
+Databases: MySQL, Oracle
+Tools & Infra: Git, Docker, Heroku, Render, Postman, Linux, Unity
+Testing & Methodologies: Unit Testing, A/B Testing, CI/CD, Agile
+Cloud & Tech: AWS Cloud Practitioner Certification (in progress), LLMs (Whisper, GPT-Neo, LoRA)
+WORK EXPERIENCE
+Software Developer Intern - Decillion Digital Ltd, Leicester, United Kingdom (Hybrid) May 2024 - August 2024
+Global IT Services and Solutions
+• Developed an AI Powered CV parsing system (Python, Flask, spaCy), reducing 3rd party dependency.
+• Designed and integrated REST APIs, enabling seamless data exchange with existing HR system.
+• Optimized ATS workflows, increasing Resume Processing efficiency by 45%.
+• Collaborated with Agile Teams and used version control and CI/CD practices for smooth integration and deployment.
+PROJECTS
+Companion Tuning: GPT-Powered Voice AI for AR/VR March 2025 - April 2025
+Dublin, Ireland
+• Built a real-time AI voice companion in AR/VR using Unity and WebSocket-based Python backend.
+• Set the Unity Scenes and Animations, fine-tuned GPT-Neo (125M) with LoRA for personalized, low-latency conversation.
+• Used Whisper (speech-to-text) and gTTS (speech synthesis) for smooth speech interaction.
+• Deployed lightweight, emotionally responsive LLMs on local GPU for immersive experience.
+Optical Amplifier Gain Prediction using Machine Learning Algorithms January 2025 – April 2025
+Dublin, Ireland
+• Modelled EDFA optical amplifier behaviour using ML Algorithms such as LightGBM, XGBoost, and Neural Networks.
+• Compared prediction accuracy under varying channel loading; Neural Networks showed highest accuracy with Mean Absolute Error
+0.08 dB.
+• Demonstrated ML’s role in optimizing signal amplification in optical telecommunications.
+Breast Cancer Tumor Classification & Segmentation November 2024 - November 2024
+Dublin, Ireland
+• Developed deep learning models for breast cancer detection, achieving 81.01% accuracy with MobileNetV2 and 73.11% F1 score
+using U-Net with ultrasound scans in Python (TensorFlow/Keras).
+• Implemented data preprocessing techniques such as normalization and augmentation, improving model generalization and robustness
+to real world data.
+• Built an interactive visualization tool using matplotlib, to analyze model predictions and tumor segmentation outputs effectively.
+CERTIFICATIONS
+Mathematics for Machine Learning
+Coursera September 2024
+Goethe-Zertifikat A1: Fit in Deutsch 1 (Basic German Language Certification)
+Goethe Institut Indien March 2017
+PUBLICATIONS
+International Conference on Intelligent and Fuzzy Systems, Springer Aug 17, 2023
+Pathfinding with Dynamic Obstacles April 2023 - August 2023
+Developed a dynamic A* search algorithm with Manhattan heuristic for efficient maze navigation. Tested on grids from 10x10 to 100x100
+with varying obstacle densities, reliably identifying the shortest path and demonstrating robust performance in diverse scenarios.
+EDUCATION
+Trinity College Dublin September 2021 - Present
+Ireland
+Bachelor's Degree in Computer Engineering
+LANGUAGES
+English – Fluent
+Hindi, Marathi – Native
+German – Beginner

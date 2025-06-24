@@ -1,0 +1,905 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+                <style>
+                    .linenums {
+                        list-style-type: none;
+                    }
+
+                    .formatted-line-numbers {
+                        display: none;
+                    }
+                    .action-code-block {
+                        display: none;
+                    }
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    table, th, td {
+                        border: 1px solid black;
+                        padding: 8px;
+                        text-align: left;
+                    }
+                </style>
+            </head><body><h1><span class="header-link octicon octicon-link"></span>Cheat Sheet: Python Data Structures Part-2</h1><br><p><span style="color:grey; font-size:24px;"><b>Dictionaries<br>    </b></span></p><table>
+
+<tbody><tr>
+    <th>Package/Method</th>
+    <th>Description</th>
+    <th>Code Example</th>
+
+</tr>
+
+
+<tr>
+<td>
+    Creating a Dictionary
+</td>
+
+<td>
+
+<p>A dictionary is a built-in data type that represents a collection of key-value pairs. Dictionaries are enclosed in curly braces <code>{}</code>.</p>
+</td>
+
+<td>
+
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dict_name </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{}</span><span class="pln"> </span><span class="com">#Creates an empty dictionary</span></code></li><li class="L1"><code><span class="pln">person </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"John"</span><span class="pun">,</span><span class="pln">  </span><span class="str">"age"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">30</span><span class="pun">,</span><span class="pln"> </span><span class="str">"city"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"New York"</span><span class="pun">}</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-0">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-0">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    Accessing Values
+</td>
+
+<td>
+
+<p>You can access the values in a dictionary using their corresponding <code>keys</code>.</p>
+</td>
+
+<td>
+
+<p>Syntax:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="typ">Value</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> dict_name</span><span class="pun">[</span><span class="str">"key_name"</span><span class="pun">]</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-1">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-1">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">name </span><span class="pun">=</span><span class="pln"> person</span><span class="pun">[</span><span class="str">"name"</span><span class="pun">]</span></code></li><li class="L1"><code><span class="pln">age </span><span class="pun">=</span><span class="pln"> person</span><span class="pun">[</span><span class="str">"age"</span><span class="pun">]</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-2">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-2">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+
+<p>Add or modify</p>
+</td>
+
+<td>
+
+<p>Inserts a new key-value pair into the dictionary. If the key already 
+exists, the value will be updated; otherwise, a new entry is created.</p>
+</td>
+
+<td>
+
+<p>Syntax:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dict_name</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> value</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-3">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-3">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">person</span><span class="pun">[</span><span class="str">"Country"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"USA"</span><span class="pln"> </span><span class="com"># A new entry will be created.</span></code></li><li class="L1"><code><span class="pln">person</span><span class="pun">[</span><span class="str">"city"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Chicago"</span><span class="pln">  </span><span class="com"># Update the existing value for the same key</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-4">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-4">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    del
+</td>
+
+<td>
+
+<p>Removes the specified key-value pair from the dictionary. Raises a <code>KeyError</code> if the key does not exist.</p>
+</td>
+
+<td>
+
+<p>Syntax:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">del</span><span class="pln"> dict_name</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-5">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-5">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">del</span><span class="pln"> person</span><span class="pun">[</span><span class="str">"Country"</span><span class="pun">]</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-6">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-6">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    update()
+</td>
+
+<td>
+
+<p>The <code>update()</code> method merges the provided dictionary into the existing dictionary, adding or updating key-value pairs.</p>
+</td>
+
+<td>
+
+<p>Syntax:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dict_name</span><span class="pun">.</span><span class="pln">update</span><span class="pun">({</span><span class="pln">key</span><span class="pun">:</span><span class="pln"> value</span><span class="pun">})</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-7">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-7">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">person</span><span class="pun">.</span><span class="pln">update</span><span class="pun">({</span><span class="str">"Profession"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Doctor"</span><span class="pun">})</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-8">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-8">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    clear()
+</td>
+
+<td>
+
+<p>The <code>clear()</code> method empties the dictionary, removing all 
+key-value pairs within it. After this operation, the dictionary is still
+ accessible and can be used further.</p>
+</td>
+
+<td>
+
+<p>Syntax:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dict_name</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-9">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-9">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">grades</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-10">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-10">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    key existence
+</td>
+
+<td>
+
+<p>You can check for the existence of a key in a dictionary using the <code>in</code> keyword</p>
+</td>
+
+<td>
+
+
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">if</span><span class="pln"> </span><span class="str">"name"</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> person</span><span class="pun">:</span></code></li><li class="L1"><code><span class="pln">    </span><span class="kwd">print</span><span class="pun">(</span><span class="str">"Name exists in the dictionary."</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-11">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-11">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    copy()
+</td>
+
+<td>
+
+<p>Creates a shallow copy of the dictionary. The new dictionary contains
+ the same key-value pairs as the original, but they remain distinct 
+objects in memory.</p>
+</td>
+
+<td>
+
+<p>Syntax:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">new_dict </span><span class="pun">=</span><span class="pln"> dict_name</span><span class="pun">.</span><span class="pln">copy</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-12">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-12">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">new_person </span><span class="pun">=</span><span class="pln"> person</span><span class="pun">.</span><span class="pln">copy</span><span class="pun">()</span></code></li><li class="L1"><code><span class="pln">new_person </span><span class="pun">=</span><span class="pln"> dict</span><span class="pun">(</span><span class="pln">person</span><span class="pun">)</span><span class="pln"> </span><span class="com"># another way to create a copy of dictionary</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-13">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-13">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    keys()
+</td>
+
+<td>
+
+<p>Retrieves all keys from the dictionary and converts them into a list.
+ Useful for iterating or processing keys using list methods.</p>
+</td>
+
+<td>
+    
+<p>Syntax:	  </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">keys_list </span><span class="pun">=</span><span class="pln"> list</span><span class="pun">(</span><span class="pln">dict_name</span><span class="pun">.</span><span class="pln">keys</span><span class="pun">())</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-14">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-14">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:	</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">person_keys </span><span class="pun">=</span><span class="pln"> list</span><span class="pun">(</span><span class="pln">person</span><span class="pun">.</span><span class="pln">keys</span><span class="pun">())</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-15">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-15">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    values()
+</td>
+    
+<td>
+    
+<p>Extracts all values from the dictionary and converts them into a list. This list can be used for further processing or analysis.</p>
+</td>
+    
+<td>
+    
+<p>Syntax:	  </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">values_list </span><span class="pun">=</span><span class="pln"> list</span><span class="pun">(</span><span class="pln">dict_name</span><span class="pun">.</span><span class="pln">values</span><span class="pun">())</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-16">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-16">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:	</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">person_values </span><span class="pun">=</span><span class="pln"> list</span><span class="pun">(</span><span class="pln">person</span><span class="pun">.</span><span class="pln">values</span><span class="pun">())</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-17">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-17">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+
+<tr>
+<td>
+    items()
+</td>
+    
+<td>
+    
+<p> Retrieves all key-value pairs as tuples and converts them into a 
+list of tuples. Each tuple consists of a key and its corresponding 
+value.</p>
+</td>
+    
+<td>
+    
+<p>Syntax:	  </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">items_list </span><span class="pun">=</span><span class="pln"> list</span><span class="pun">(</span><span class="pln">dict_name</span><span class="pun">.</span><span class="pln">items</span><span class="pun">())</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-18">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-18">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:	</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">info </span><span class="pun">=</span><span class="pln"> list</span><span class="pun">(</span><span class="pln">person</span><span class="pun">.</span><span class="pln">items</span><span class="pun">())</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-19">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-19">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+</tbody></table><p><span style="color:grey; font-size:24px;"><b>Sets</b></span></p><p></p><table>
+<tbody><tr>
+<th>Package/Method</th>
+<th>Description</th>
+<th>Code Example</th>
+</tr>
+<tr>
+<td>add()</td>
+<td>Elements can be added to a set using the `add()` method. Duplicates are automatically removed, as sets only store unique values.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">set_name</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-20">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-20">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">fruits</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="str">"mango"</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-21">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-21">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>The `clear()` method removes all elements from the set, resulting in an empty set. It updates the set in-place.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">set_name</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">()</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-22">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-22">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">fruits</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-23">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-23">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td></tr>
+<tr>
+<td>copy()</td>
+<td>The `copy()` method creates a shallow copy of the set. Any modifications to the copy won't affect the original set.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">new_set </span><span class="pun">=</span><span class="pln"> set_name</span><span class="pun">.</span><span class="pln">copy</span><span class="pun">()</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-24">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-24">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">new_fruits </span><span class="pun">=</span><span class="pln"> fruits</span><span class="pun">.</span><span class="pln">copy</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-25">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-25">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>Defining Sets</td>
+<td>A set is an unordered collection of unique elements. Sets are 
+enclosed in curly braces `{}`. They are useful for storing distinct 
+values and performing set operations.</td>
+<td>Example:
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">empty_set </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">set</span><span class="pun">()</span><span class="pln"> </span><span class="com">#Creating an Empty Set </span></code></li><li class="L1"><code><span class="pln">fruits </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="str">"apple"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"banana"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"orange"</span><span class="pun">}</span></code></li><li class="L2"><code><span class="pln">colors </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="str">"orange"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"red"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"green"</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-26">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-26">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p><strong>Note:</strong> These two sets will be used in the examples that follow.</p></td>
+</tr>
+<tr>
+<td>discard()</td>
+<td>Use the `discard()` method to remove a specific element from the set. Ignores if the element is not found.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">set_name</span><span class="pun">.</span><span class="pln">discard</span><span class="pun">(</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-27">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-27">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">fruits</span><span class="pun">.</span><span class="pln">discard</span><span class="pun">(</span><span class="str">"apple"</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-28">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-28">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>issubset()</td>
+<td>The `issubset()` method checks if the current set is a subset of 
+another set. It returns True if all elements of the current set are 
+present in the other set, otherwise False.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">is_subset </span><span class="pun">=</span><span class="pln"> set1</span><span class="pun">.</span><span class="pln">issubset</span><span class="pun">(</span><span class="pln">set2</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-29">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-29">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">is_subset </span><span class="pun">=</span><span class="pln"> fruits</span><span class="pun">.</span><span class="pln">issubset</span><span class="pun">(</span><span class="pln">colors</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-30">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-30">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>issuperset()</td>
+<td>The `issuperset()` method checks if the current set is a superset of
+ another set. It returns True if all elements of the other set are 
+present in the current set, otherwise False.</td>
+<td>
+Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">is_superset </span><span class="pun">=</span><span class="pln"> set1</span><span class="pun">.</span><span class="pln">issuperset</span><span class="pun">(</span><span class="pln">set2</span><span class="pun">)</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-31">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-31">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">is_superset </span><span class="pun">=</span><span class="pln"> colors</span><span class="pun">.</span><span class="pln">issuperset</span><span class="pun">(</span><span class="pln">fruits</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-32">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-32">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>The `pop()` method removes and returns an arbitrary element from the
+ set. It raises a `KeyError` if the set is empty. Use this method to 
+remove elements when the order doesn't matter.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">removed_element </span><span class="pun">=</span><span class="pln"> set_name</span><span class="pun">.</span><span class="pln">pop</span><span class="pun">()</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-33">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-33">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">removed_fruit </span><span class="pun">=</span><span class="pln"> fruits</span><span class="pun">.</span><span class="pln">pop</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-34">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-34">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>remove()</td>
+<td>Use the `remove()` method to remove a specific element from the set. Raises a `KeyError` if the element is not found.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">set_name</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">element</span><span class="pun">)</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-35">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-35">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">fruits</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="str">"banana"</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-36">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-36">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>Set Operations</td>
+<td>Perform various operations on sets: `union`, `intersection`, `difference`, `symmetric difference`.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">union_set </span><span class="pun">=</span><span class="pln"> set1</span><span class="pun">.</span><span class="kwd">union</span><span class="pun">(</span><span class="pln">set2</span><span class="pun">)</span><span class="pln"> </span></code></li><li class="L1"><code><span class="pln">intersection_set </span><span class="pun">=</span><span class="pln"> set1</span><span class="pun">.</span><span class="pln">intersection</span><span class="pun">(</span><span class="pln">set2</span><span class="pun">)</span><span class="pln"> </span></code></li><li class="L2"><code><span class="pln">difference_set </span><span class="pun">=</span><span class="pln"> set1</span><span class="pun">.</span><span class="pln">difference</span><span class="pun">(</span><span class="pln">set2</span><span class="pun">)</span><span class="pln"> </span></code></li><li class="L3"><code><span class="pln">sym_diff_set </span><span class="pun">=</span><span class="pln"> set1</span><span class="pun">.</span><span class="pln">symmetric_difference</span><span class="pun">(</span><span class="pln">set2</span><span class="pun">)</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-37">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-37">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">combined </span><span class="pun">=</span><span class="pln"> fruits</span><span class="pun">.</span><span class="kwd">union</span><span class="pun">(</span><span class="pln">colors</span><span class="pun">)</span><span class="pln"> </span></code></li><li class="L1"><code><span class="pln">common </span><span class="pun">=</span><span class="pln"> fruits</span><span class="pun">.</span><span class="pln">intersection</span><span class="pun">(</span><span class="pln">colors</span><span class="pun">)</span><span class="pln"> </span></code></li><li class="L2"><code><span class="pln">unique_to_fruits </span><span class="pun">=</span><span class="pln"> fruits</span><span class="pun">.</span><span class="pln">difference</span><span class="pun">(</span><span class="pln">colors</span><span class="pun">)</span><span class="pln"> </span></code></li><li class="L3"><code><span class="pln">sym_diff </span><span class="pun">=</span><span class="pln"> fruits</span><span class="pun">.</span><span class="pln">symmetric_difference</span><span class="pun">(</span><span class="pln">colors</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-38">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-38">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>update()</td>
+<td>The `update()` method adds elements from another iterable into the set. It maintains the uniqueness of elements.</td>
+<td>Syntax: 
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">set_name</span><span class="pun">.</span><span class="pln">update</span><span class="pun">(</span><span class="pln">iterable</span><span class="pun">)</span><span class="pln"> </span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-39">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-39">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example: </p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">fruits</span><span class="pun">.</span><span class="pln">update</span><span class="pun">([</span><span class="str">"kiwi"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"grape"</span><span class="pun">])</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-40">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-40">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+</tbody></table><footer>
+<img src="Python%20Data%20Structures%202%20Cheat%20Sheet_files/footer_6b.png" alt="">
+</footer><h3> © IBM Corporation. All rights reserved. </h3><h3></h3><br><script src="Python%20Data%20Structures%202%20Cheat%20Sheet_files/app.js" type="text/javascript"></script></body></html>

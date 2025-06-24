@@ -1,0 +1,926 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+                <style>
+                    .linenums {
+                        list-style-type: none;
+                    }
+
+                    .formatted-line-numbers {
+                        display: none;
+                    }
+                    .action-code-block {
+                        display: none;
+                    }
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    table, th, td {
+                        border: 1px solid black;
+                        padding: 8px;
+                        text-align: left;
+                    }
+                </style>
+            </head><body><h2><span class="header-link octicon octicon-link"></span>Working with Data in Python Cheat Sheet</h2><span style="color:grey; font-size:24px;"><b>Reading and writing files</b></span><table>
+<tbody><tr>
+<th>Package/Method</th>
+<th>Description</th>
+<th>Syntax and Code Example</th>
+</tr>
+<tr>
+<td>File opening modes</td>
+<td>Different modes to open files for specific operations.</td>
+    
+<td>Syntax: r (reading) w (writing) a (appending) + (updating: read/write) b (binary, otherwise text)
+    
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="typ">Examples</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"data.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"r"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span><span class="pln"> content </span><span class="pun">=</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">read</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">print</span><span class="pun">(</span><span class="pln">content</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"output.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"w"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="str">"Hello, world!"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"log.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"a"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="str">"Log entry: Something happened."</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"data.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"r+"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span><span class="pln"> content </span><span class="pun">=</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">read</span><span class="pun">()</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="str">"Updated content: "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> content</span><span class="pun">)&lt;/</span><span class="pln">td</span><span class="pun">&gt;</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-0">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-0">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td></tr>
+<tr>
+<td>File reading methods</td>
+<td>Different methods to read file content in various ways.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">file</span><span class="pun">.</span><span class="pln">readlines</span><span class="pun">()</span><span class="pln"> </span><span class="com"># reads all lines as a list</span></code></li><li class="L1"><code><span class="pln">readline</span><span class="pun">()</span><span class="pln"> </span><span class="com"># reads the next line as a string</span></code></li><li class="L2"><code><span class="pln">file</span><span class="pun">.</span><span class="pln">read</span><span class="pun">()</span><span class="pln"> </span><span class="com"># reads the entire file content as a string</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-1">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-1">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"data.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"r"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span></code></li><li class="L1"><code><span class="pln">    lines </span><span class="pun">=</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">readlines</span><span class="pun">()</span></code></li><li class="L2"><code><span class="pln">    next_line </span><span class="pun">=</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">readline</span><span class="pun">()</span></code></li><li class="L3"><code><span class="pln">    content </span><span class="pun">=</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">read</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-2">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-2">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>File writing methods</td>
+<td>Different write methods to write content to a file.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">file</span><span class="pun">.</span><span class="pln">write</span><span class="pun">(</span><span class="pln">content</span><span class="pun">)</span><span class="pln"> </span><span class="com"># writes a string to the file</span></code></li><li class="L1"><code><span class="pln">file</span><span class="pun">.</span><span class="pln">writelines</span><span class="pun">(</span><span class="pln">lines</span><span class="pun">)</span><span class="pln"> </span><span class="com"># writes a list of strings to the file</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-3">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-3">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">lines </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">"Hello\n"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"World\n"</span><span class="pun">]</span></code></li><li class="L1"><code><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"output.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"w"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span></code></li><li class="L2"><code><span class="pln">    file</span><span class="pun">.</span><span class="pln">writelines</span><span class="pun">(</span><span class="pln">lines</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-4">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-4">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>Iterating over lines</td>
+<td>Iterates through each line in the file using a `loop`.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">for</span><span class="pln"> line </span><span class="kwd">in</span><span class="pln"> file</span><span class="pun">:</span><span class="pln"> </span><span class="com"># Code to process each line</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-5">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-5">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"data.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"r"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span></code></li><li class="L1"><code><span class="kwd">for</span><span class="pln"> line </span><span class="kwd">in</span><span class="pln"> file</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">print</span><span class="pun">(</span><span class="pln">line</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-6">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-6">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>Open() and close()</td>
+<td>Opens a file, performs operations, and explicitly closes the file using the close() method.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">file </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">,</span><span class="pln"> mode</span><span class="pun">)</span><span class="pln"> </span><span class="com"># Code that uses the file</span></code></li><li class="L1"><code><span class="pln">file</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-7">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-7">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">file </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"data.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"r"</span><span class="pun">)</span></code></li><li class="L1"><code><span class="pln">content </span><span class="pun">=</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">read</span><span class="pun">()</span></code></li><li class="L2"><code><span class="pln">file</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-8">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-8">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>with open()</td>
+<td>Opens a file using a with block, ensuring automatic file closure after usage.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">,</span><span class="pln"> mode</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span><span class="pln"> </span><span class="com"># Code that uses the file</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-9">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-9">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">"data.txt"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"r"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> file</span><span class="pun">:</span></code></li><li class="L1"><code><span class="pln">content </span><span class="pun">=</span><span class="pln"> file</span><span class="pun">.</span><span class="pln">read</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-10">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-10">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+</tbody></table><span style="color:grey; font-size:24px;"><b>Pandas</b></span><table>
+<tbody><tr>
+<th>Package/Method</th>
+<th>Description</th>
+<th>Syntax and Code Example</th>
+</tr>
+<tr>
+<td>.read_csv()</td>
+<td>Reads data from a `.CSV` file and creates a DataFrame.</td>
+<td>Syntax: dataframe_name = pd.read_csv("filename.csv") Example: df = pd.read_csv("data.csv")</td>
+</tr>
+<tr>
+<td>.read_excel()</td>
+<td>Reads data from an Excel file and creates a DataFrame.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name </span><span class="pun">=</span><span class="pln"> pd</span><span class="pun">.</span><span class="pln">read_excel</span><span class="pun">(</span><span class="str">"filename.xlsx"</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-11">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-11">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df </span><span class="pun">=</span><span class="pln"> pd</span><span class="pun">.</span><span class="pln">read_excel</span><span class="pun">(</span><span class="str">"data.xlsx"</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-12">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-12">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>.to_csv()</td>
+<td>Writes DataFrame to a CSV file.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">to_csv</span><span class="pun">(</span><span class="str">"output.csv"</span><span class="pun">,</span><span class="pln"> index</span><span class="pun">=</span><span class="kwd">False</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-13">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-13">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">.</span><span class="pln">to_csv</span><span class="pun">(</span><span class="str">"output.csv"</span><span class="pun">,</span><span class="pln"> index</span><span class="pun">=</span><span class="kwd">False</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-14">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-14">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>Access Columns</td>
+<td>Accesses a specific column using [] in the DataFrame.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">[</span><span class="str">"column_name"</span><span class="pun">]</span><span class="pln"> </span><span class="com"># Accesses single column</span></code></li><li class="L1"><code><span class="pln">dataframe_name</span><span class="pun">[[</span><span class="str">"column1"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"column2"</span><span class="pun">]]</span><span class="pln"> </span><span class="com"># Accesses multiple columns</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-15">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-15">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">[</span><span class="str">"age"</span><span class="pun">]</span></code></li><li class="L1"><code><span class="pln">df</span><span class="pun">[[</span><span class="str">"name"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"age"</span><span class="pun">]]</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-16">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-16">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>describe()</td>
+<td>Generates statistics summary of numeric columns in the DataFrame.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">describe</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-17">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-17">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">.</span><span class="pln">describe</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-18">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-18">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>drop()</td>
+<td>Removes specified rows or columns from the DataFrame. axis=1 indicates columns. axis=0 indicates rows.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">drop</span><span class="pun">([</span><span class="str">"column1"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"column2"</span><span class="pun">],</span><span class="pln"> axis</span><span class="pun">=</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> inplace</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></code></li><li class="L1"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">drop</span><span class="pun">(</span><span class="pln">index</span><span class="pun">=[</span><span class="pln">row1</span><span class="pun">,</span><span class="pln"> row2</span><span class="pun">],</span><span class="pln"> axis</span><span class="pun">=</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> inplace</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-19">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-19">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">.</span><span class="pln">drop</span><span class="pun">([</span><span class="str">"age"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"salary"</span><span class="pun">],</span><span class="pln"> axis</span><span class="pun">=</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> inplace</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span><span class="pln"> </span><span class="com"># Will drop columns</span></code></li><li class="L1"><code><span class="pln">df</span><span class="pun">.</span><span class="pln">drop</span><span class="pun">(</span><span class="pln">index</span><span class="pun">=[</span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">],</span><span class="pln"> axis</span><span class="pun">=</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> inplace</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span><span class="pln"> </span><span class="com"># Will drop rows</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-20">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-20">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>dropna()</td>
+<td>Removes rows with missing NaN values from the DataFrame. axis=0 indicates rows.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">dropna</span><span class="pun">(</span><span class="pln">axis</span><span class="pun">=</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> inplace</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-21">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-21">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">.</span><span class="pln">dropna</span><span class="pun">(</span><span class="pln">axis</span><span class="pun">=</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> inplace</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-22">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-22">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>duplicated()</td>
+<td> Duplicate or repetitive values or records within a data set.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">duplicated</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-23">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-23">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">duplicate_rows </span><span class="pun">=</span><span class="pln"> df</span><span class="pun">[</span><span class="pln">df</span><span class="pun">.</span><span class="pln">duplicated</span><span class="pun">()]</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-24">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-24">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>Filter Rows</td>
+<td>Creates a new DataFrame with rows that meet specified conditions.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">filtered_df </span><span class="pun">=</span><span class="pln"> dataframe_name</span><span class="pun">[(</span><span class="typ">Conditional_statements</span><span class="pun">)]</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-25">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-25">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">filtered_df </span><span class="pun">=</span><span class="pln"> df</span><span class="pun">[(</span><span class="pln">df</span><span class="pun">[</span><span class="str">"age"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">30</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">df</span><span class="pun">[</span><span class="str">"salary"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">50000</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-26">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-26">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>groupby()</td>
+<td> Splits a DataFrame into groups based on specified criteria, 
+enabling subsequent aggregation, transformation, or analysis within each
+ group.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">grouped </span><span class="pun">=</span><span class="pln"> dataframe_name</span><span class="pun">.</span><span class="pln">groupby</span><span class="pun">(</span><span class="kwd">by</span><span class="pun">,</span><span class="pln"> axis</span><span class="pun">=</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> level</span><span class="pun">=</span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> as_index</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">,</span></code></li><li class="L1"><code><span class="pln">sort</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">,</span><span class="pln"> group_keys</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">,</span><span class="pln"> squeeze</span><span class="pun">=</span><span class="kwd">False</span><span class="pun">,</span><span class="pln"> observed</span><span class="pun">=</span><span class="kwd">False</span><span class="pun">,</span><span class="pln"> dropna</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-27">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-27">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">grouped </span><span class="pun">=</span><span class="pln"> df</span><span class="pun">.</span><span class="pln">groupby</span><span class="pun">([</span><span class="str">"category"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"region"</span><span class="pun">]).</span><span class="pln">agg</span><span class="pun">({</span><span class="str">"sales"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"sum"</span><span class="pun">})</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-28">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-28">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>head()</td>
+<td>Displays the first n rows of the DataFrame.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">head</span><span class="pun">(</span><span class="pln">n</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-29">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-29">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">.</span><span class="pln">head</span><span class="pun">(</span><span class="lit">5</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-30">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-30">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>Import pandas</td>
+<td>Imports the Pandas library with the alias pd.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">import</span><span class="pln"> pandas </span><span class="kwd">as</span><span class="pln"> pd</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-31">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-31">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">import</span><span class="pln"> pandas </span><span class="kwd">as</span><span class="pln"> pd</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-32">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-32">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>info()</td>
+<td>Provides information about the DataFrame, including data types and memory usage.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">info</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-33">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-33">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">.</span><span class="pln">info</span><span class="pun">()</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-34">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-34">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>merge()</td>
+<td>Merges two DataFrames based on multiple common columns.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">merged_df </span><span class="pun">=</span><span class="pln"> pd</span><span class="pun">.</span><span class="pln">merge</span><span class="pun">(</span><span class="pln">df1</span><span class="pun">,</span><span class="pln"> df2</span><span class="pun">,</span><span class="pln"> on</span><span class="pun">=[</span><span class="str">"column1"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"column2"</span><span class="pun">])</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-35">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-35">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">merged_df </span><span class="pun">=</span><span class="pln"> pd</span><span class="pun">.</span><span class="pln">merge</span><span class="pun">(</span><span class="pln">sales</span><span class="pun">,</span><span class="pln"> products</span><span class="pun">,</span><span class="pln"> on</span><span class="pun">=[</span><span class="str">"product_id"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"category_id"</span><span class="pun">])</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-36">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-36">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>print DataFrame</td>
+<td>Displays the content of the DataFrame.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">print</span><span class="pun">(</span><span class="pln">df</span><span class="pun">)</span><span class="pln"> </span><span class="com"># or just type df</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-37">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-37">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">print</span><span class="pun">(</span><span class="pln">df</span><span class="pun">)</span></code></li><li class="L1"><code><span class="pln">df</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-38">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-38">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>replace()</td>
+<td>Replaces specific values in a column with new values.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">[</span><span class="str">"column_name"</span><span class="pun">].</span><span class="pln">replace</span><span class="pun">(</span><span class="pln">old_value</span><span class="pun">,</span><span class="pln"> new_value</span><span class="pun">,</span><span class="pln"> inplace</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-39">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-39">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">[</span><span class="str">"status"</span><span class="pun">].</span><span class="pln">replace</span><span class="pun">(</span><span class="str">"In Progress"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Active"</span><span class="pun">,</span><span class="pln"> inplace</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-40">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-40">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>tail()</td>
+<td>Displays the last n rows of the DataFrame.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">dataframe_name</span><span class="pun">.</span><span class="pln">tail</span><span class="pun">(</span><span class="pln">n</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-41">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-41">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">df</span><span class="pun">.</span><span class="pln">tail</span><span class="pun">(</span><span class="lit">5</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-42">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-42">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+</tbody></table><span style="color:grey; font-size:24px;"><b>Numpy</b></span><table>
+<tbody><tr>
+<th>Package/Method</th>
+<th>Description</th>
+<th>Syntax and Code Example</th>
+</tr>
+<tr>
+<td>Importing NumPy</td>
+<td>Imports the NumPy library.</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">import</span><span class="pln"> numpy </span><span class="kwd">as</span><span class="pln"> np</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-43">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-43">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li></ol><ol class="linenums"><li class="L0"><code><span class="kwd">import</span><span class="pln"> numpy </span><span class="kwd">as</span><span class="pln"> np</span></code></li></ol>
+          <div class="code-block-actions z-0 single-line">
+            <button title="Copy" class="action-code-block copy-code-block">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-44">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-44">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>np.array()</td>
+<td> Creates a one or multi-dimensional array,</td>
+<td>Syntax:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">array_1d </span><span class="pun">=</span><span class="pln"> np</span><span class="pun">.</span><span class="pln">array</span><span class="pun">([</span><span class="pln">list1 values</span><span class="pun">])</span><span class="pln"> </span><span class="com"># 1D Array</span></code></li><li class="L1"><code><span class="pln">array_2d </span><span class="pun">=</span><span class="pln"> np</span><span class="pun">.</span><span class="pln">array</span><span class="pun">([[</span><span class="pln">list1 values</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="pln">list2 values</span><span class="pun">]])</span><span class="pln"> </span><span class="com"># 2D Array</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-45">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-45">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+<p>Example:</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">array_1d </span><span class="pun">=</span><span class="pln"> np</span><span class="pun">.</span><span class="pln">array</span><span class="pun">([</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">])</span><span class="pln"> </span><span class="com"># 1D Array</span></code></li><li class="L1"><code><span class="pln">array_2d </span><span class="pun">=</span><span class="pln"> np</span><span class="pun">.</span><span class="pln">array</span><span class="pun">([[</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pun">]])</span><span class="pln"> </span><span class="com"># 2D Array</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-46">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-46">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+<tr>
+<td>Numpy Array Attributes</td>
+<td>
+- Calculates the mean of array elements <br>
+- Calculates the sum of array elements <br>
+- Finds the minimum value in the array <br>
+- Finds the maximum value in the array <br>
+- Computes dot product of two arrays</td>
+<td>Example:
+
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ol><ol class="linenums"><li class="L0"><code><span class="pln">np</span><span class="pun">.</span><span class="pln">mean</span><span class="pun">(</span><span class="pln">array</span><span class="pun">)</span></code></li><li class="L1"><code><span class="pln">np</span><span class="pun">.</span><span class="pln">sum</span><span class="pun">(</span><span class="pln">array</span><span class="pun">)</span></code></li><li class="L2"><code><span class="pln">np</span><span class="pun">.</span><span class="pln">min</span><span class="pun">(</span><span class="pln">array</span></code></li><li class="L3"><code><span class="pln">np</span><span class="pun">.</span><span class="pln">max</span><span class="pun">(</span><span class="pln">array</span><span class="pun">)</span></code></li><li class="L4"><code><span class="pln">np</span><span class="pun">.</span><span class="pln">dot</span><span class="pun">(</span><span class="pln">array_1</span><span class="pun">,</span><span class="pln"> array_2</span><span class="pun">)</span></code></li></ol>
+          <div class="code-block-actions multiple-lines z-0">
+            <button title="Copy" class="action-code-block copy-code-block multiple-lines">
+              <i class="fa fa-copy" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-copy-47">Copied!</span>
+            </button>
+            <button title="Toggle Wrap" class="action-code-block wrap-code-block multiple-lines">
+              <i class="fa fa-align-left" aria-hidden="true"></i>
+              <span class="popuptext" id="md-code-block-wrap-47">Wrap Toggled!</span>
+            </button>
+            
+            
+          </div>
+        </pre>
+</td>
+</tr>
+</tbody></table><footer>
+<img src="WorkingWithDataInPythonCheatSheet_files/footer_6b.png" alt="">
+</footer><h3> © IBM Corporation. All rights reserved. </h3><h3></h3><script src="WorkingWithDataInPythonCheatSheet_files/app.js" type="text/javascript"></script></body></html>
